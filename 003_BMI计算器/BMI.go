@@ -17,6 +17,10 @@ func  main()  {
 		age int				//年龄
 		sex string 
 		sexRate float64
+
+		avearageFat float64 = 0.0	//平均体脂
+		peoplecount int = 0
+
 	)
 
 	for isContinue := true; isContinue;  {
@@ -34,113 +38,96 @@ func  main()  {
 	}else{
 		sexRate = 0
 	}
-
+	peoplecount ++
 	var bmi float64 = weight/(height * height)
 	var fatRate float64 = (1.2 * bmi + 0.23 * float64(age) - 5.4 - 10.8 * sexRate) /100
 	// fmt.Printf("BMI:%2.3f 体脂率：%2.3f",bmi,fatRate)		//输出BMI 体脂率
-
+	fmt.Println("+**************************************+")
 	if sex == "man" {
-		if age < 18 {
+		 if age >= 18 && age <=39 {
 			if fatRate <= 0.1 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,太瘦了",bmi,fatRate)
+				fmt.Printf("BMI:%2.3f\n 体脂率：%2.3f\n太瘦了\n",bmi,fatRate)
 			}else if fatRate >0.1 &&fatRate <= 0.16 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,标准，太棒了",bmi,fatRate)
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n标准，太棒了\n",bmi,fatRate)
 			}else if fatRate > 0.16 && fatRate <= 0.21 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,偏重，不影响把妹，加油",bmi,fatRate)
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n偏重，不影响把妹，加油\n",bmi,fatRate)
 			}else if fatRate > 0.21 && fatRate <= 0.26 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,稍微有点胖了，需要控制",bmi,fatRate)
+				fmt.Printf("BMI:%2.3f\n 体脂率：%2.3f\n稍微有点胖了，需要控制\n",bmi,fatRate)
 			}else {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,危险！危险！危险！要减肥了",bmi,fatRate)
-			}
-		}else if age >= 18 && age <=39 {
-			if fatRate <= 0.1 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,太瘦了",bmi,fatRate)
-			}else if fatRate >0.1 &&fatRate <= 0.16 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,标准，太棒了",bmi,fatRate)
-			}else if fatRate > 0.16 && fatRate <= 0.21 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,偏重，不影响把妹，加油",bmi,fatRate)
-			}else if fatRate > 0.21 && fatRate <= 0.26 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,稍微有点胖了，需要控制",bmi,fatRate)
-			}else {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,危险！危险！危险！要减肥了",bmi,fatRate)
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n危险！危险！危险！要减肥了\n",bmi,fatRate)
 			}
 		}else if age >= 40 && age <= 59{
-			if fatRate <= 0.1 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,太瘦了",bmi,fatRate)
-			}else if fatRate >0.1 &&fatRate <= 0.16 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,标准，太棒了",bmi,fatRate)
-			}else if fatRate > 0.16 && fatRate <= 0.21 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,偏重，不影响把妹，加油",bmi,fatRate)
-			}else if fatRate > 0.21 && fatRate <= 0.26 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,稍微有点胖了，需要控制",bmi,fatRate)
+			if fatRate <= 0.11 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n太瘦了\n",bmi,fatRate)
+			}else if fatRate >0.11 &&fatRate <= 0.17 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n标准，太棒了\n",bmi,fatRate)
+			}else if fatRate > 0.17 && fatRate <= 0.22 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n偏重，不影响把妹，加油\n",bmi,fatRate)
+			}else if fatRate > 0.22 && fatRate <= 0.27 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n稍微有点胖了，需要控制\n",bmi,fatRate)
 			}else {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,危险！危险！危险！要减肥了",bmi,fatRate)
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n危险！危险！危险！要减肥了\n",bmi,fatRate)
 			}
 		}else{
-			if fatRate <= 0.1 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,太瘦了",bmi,fatRate)
-			}else if fatRate >0.1 &&fatRate <= 0.16 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,标准，太棒了",bmi,fatRate)
-			}else if fatRate > 0.16 && fatRate <= 0.21 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,偏重，不影响把妹，加油",bmi,fatRate)
-			}else if fatRate > 0.21 && fatRate <= 0.26 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,稍微有点胖了，需要控制",bmi,fatRate)
+			if fatRate <= 0.13 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n太瘦了\n",bmi,fatRate)
+			}else if fatRate >0.13 &&fatRate <= 0.19 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n标准，太棒了\n",bmi,fatRate)
+			}else if fatRate > 0.19 && fatRate <= 0.24 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n偏重，不影响把妹，加油\n",bmi,fatRate)
+			}else if fatRate > 0.24 && fatRate <= 0.29 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n稍微有点胖了，需要控制\n",bmi,fatRate)
 			}else {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,危险！危险！危险！要减肥了",bmi,fatRate)
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n危险！危险！危险！要减肥了\n",bmi,fatRate)
 			}	
 		}
 	}else{
-		if age < 18 {
-			if fatRate <= 0.1 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,太瘦了",bmi,fatRate)
-			}else if fatRate >0.1 &&fatRate <= 0.16 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,标准，太棒了",bmi,fatRate)
-			}else if fatRate > 0.16 && fatRate <= 0.21 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,偏重，不影响把妹，加油",bmi,fatRate)
-			}else if fatRate > 0.21 && fatRate <= 0.26 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,稍微有点胖了，需要控制",bmi,fatRate)
+		if age >= 18 && age <=39 {
+			if fatRate <= 0.2 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n太瘦了\n",bmi,fatRate)
+			}else if fatRate >0.2 &&fatRate <= 0.27 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n标准，太棒了\n",bmi,fatRate)
+			}else if fatRate > 0.27 && fatRate <= 0.34 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n偏重，不影响，加油\n",bmi,fatRate)
+			}else if fatRate > 0.34 && fatRate <= 0.39 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n稍微有点胖了，需要控制\n",bmi,fatRate)
 			}else {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,危险！危险！危险！要减肥了",bmi,fatRate)
-			}
-		}else if age >= 18 && age <=39 {
-			if fatRate <= 0.1 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,太瘦了",bmi,fatRate)
-			}else if fatRate >0.1 &&fatRate <= 0.16 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,标准，太棒了",bmi,fatRate)
-			}else if fatRate > 0.16 && fatRate <= 0.21 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,偏重，不影响把妹，加油",bmi,fatRate)
-			}else if fatRate > 0.21 && fatRate <= 0.26 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,稍微有点胖了，需要控制",bmi,fatRate)
-			}else {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,危险！危险！危险！要减肥了",bmi,fatRate)
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n危险！危险！危险！要减肥了\n",bmi,fatRate)
 			}
 		}else if age >= 40 && age <= 59{
-			if fatRate <= 0.1 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,太瘦了",bmi,fatRate)
-			}else if fatRate >0.1 &&fatRate <= 0.16 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,标准，太棒了",bmi,fatRate)
-			}else if fatRate > 0.16 && fatRate <= 0.21 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,偏重，不影响把妹，加油",bmi,fatRate)
-			}else if fatRate > 0.21 && fatRate <= 0.26 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,稍微有点胖了，需要控制",bmi,fatRate)
+			if fatRate <= 0.21 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n太瘦了\n",bmi,fatRate)
+			}else if fatRate >0.21 &&fatRate <= 0.28 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n标准，太棒了\n",bmi,fatRate)
+			}else if fatRate > 0.28 && fatRate <= 0.35 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n偏重，不影响，加油\n",bmi,fatRate)
+			}else if fatRate > 0.35 && fatRate <= 0.40 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n稍微有点胖了，需要控制\n",bmi,fatRate)
 			}else {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,危险！危险！危险！要减肥了",bmi,fatRate)
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n危险！危险！危险！要减肥了\n",bmi,fatRate)
 			}
 		}else{
-			if fatRate <= 0.1 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,太瘦了",bmi,fatRate)
-			}else if fatRate >0.1 &&fatRate <= 0.16 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,标准，太棒了",bmi,fatRate)
-			}else if fatRate > 0.16 && fatRate <= 0.21 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,偏重，不影响把妹，加油",bmi,fatRate)
-			}else if fatRate > 0.21 && fatRate <= 0.26 {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,稍微有点胖了，需要控制",bmi,fatRate)
+			if fatRate <= 0.22 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n太瘦了\n",bmi,fatRate)
+			}else if fatRate >0.22&&fatRate <= 0.29 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n标准，太棒了\n",bmi,fatRate)
+			}else if fatRate > 0.29&& fatRate <= 0.36 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n偏重，不影响，加油\n",bmi,fatRate)
+			}else if fatRate > 0.36 && fatRate <= 0.41 {
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n稍微有点胖了，需要控制\n",bmi,fatRate)
 			}else {
-				fmt.Printf("BMI:%2.3f 体脂率：%2.3f,危险！危险！危险！要减肥了",bmi,fatRate)
+				fmt.Printf("BMI:%2.3f \n体脂率：%2.3f\n危险！危险！危险！要减肥了\n",bmi,fatRate)
 			}	
 		}
 	}
-	fmt.Printf("Y 继续，Q 退出")
+
+	
+
+fmt.Printf("+**************************************+\n共录入%d人记录，平均体脂为%2.3f \n+**************************************+\n",peoplecount,(avearageFat*float64(peoplecount-1)+fatRate)/float64(peoplecount))
+
+
+	//循环控制
+	fmt.Printf("Y 继续，Q 退出\n")
 	var tmep string
 	fmt.Scanln(&tmep)
 	if tmep == "Y" || tmep == "y" {
